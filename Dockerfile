@@ -8,5 +8,5 @@ COPY src ./src
 RUN mvn -e -B package
 
 FROM openjdk:8-jre-alpine
-COPY --from=builder /app/target/app.jar .
+COPY --from=builder /app/target/payments-service-example-0.0.1-SNAPSHOT-spring-boot.jar ./app.jar
 CMD java -jar /app.jar $APP_ARGS
